@@ -1,24 +1,3 @@
-# README
+# Warzone Tourney
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I made this entire Ruby Website in a day after a few friends of mine and I wanted to play with more people than just myself. Application supports signing up with `Devise` as well as authentication with email. Feel free to take a look!
