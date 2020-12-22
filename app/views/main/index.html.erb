@@ -1,0 +1,19 @@
+<span style='text-align:center'><h1>About this page</h1></span>
+
+<br>
+
+<p>
+    We are a bunch of friends that love to play Warzone and are looking for some fun, non-sweaty lobbies to play in as well as bring more friends together to play.
+    If you want to join in on the fun, create a group of 3 friends and click on the link below to register your team.
+    There is no prize pool so just come on down and have some fun!
+</p>
+
+<br>
+
+<div class='d-grid col-2 mx-auto'>
+    <% if user_signed_in? %>
+        <%= link_to 'Register Team', new_team_path , class: 'btn btn-secondary' %>
+    <% else %>
+        <%= link_to 'Sign in to Register Team', new_user_session_path , class: 'btn btn-secondary' %>
+    <% end %>
+</div>

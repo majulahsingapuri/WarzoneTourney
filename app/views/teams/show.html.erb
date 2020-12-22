@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Leader name:</strong>
+  <%= @team.leader_name %>
+</p>
+
+<p>
+  <strong>Leader ign:</strong>
+  <%= @team.leader_IGN %>
+</p>
+
+<p>
+  <strong>Member1 name:</strong>
+  <%= @team.member1_name %>
+</p>
+
+<p>
+  <strong>Member1 ign:</strong>
+  <%= @team.member1_IGN %>
+</p>
+
+<p>
+  <strong>Member2 name:</strong>
+  <%= @team.member2_name %>
+</p>
+
+<p>
+  <strong>Member2 ign:</strong>
+  <%= @team.member2_IGN %>
+</p>
+
+<%= link_to 'Edit', edit_team_path(@team), class:'btn btn-secondary' %>
+<%= link_to 'Teams', teams_path, class:'btn btn-secondary' %>

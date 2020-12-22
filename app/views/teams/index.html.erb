@@ -1,0 +1,55 @@
+<h1>Teams</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Leader Name</th>
+      <th>Leader IGN</th>
+      <th>Member1 Name</th>
+      <th>Member1 IGN</th>
+      <th>Member2 Name</th>
+      <th>Member2 IGN</th>
+      <% if user_signed_in? %>
+        <th colspan="1">Options</th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.leader_name %></td>
+        <td><%= team.leader_IGN %></td>
+        <td><%= team.member1_name %></td>
+        <td><%= team.member1_IGN %></td>
+        <td><%= team.member2_name %></td>
+        <td><%= team.member2_IGN %></td>
+        <% if user_signed_in? %>
+          <td>
+            <% if team.user_id == current_user.id %>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  More
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <%= link_to 'Show', team, class: 'dropdown-item' %>
+                  <%= link_to 'Edit', edit_team_path(team), class: 'dropdown-item' %>
+                  <li><hr class="dropdown-divider"></li>
+                  <span style='margin-left:10px'><%= link_to 'Delete', team, method: :delete, data: { confirm: 'Are you sure? You will have to re-register.' }, class: 'btn btn-danger' %></span>
+                </ul>
+              </div>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if user_signed_in? && Team.count < 50 %>
+  <div class='d-grid col-2 mx-auto'>
+    <%= link_to 'Register', new_team_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>
