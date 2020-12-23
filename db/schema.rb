@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_12_22_091232) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "teams", force: :cascade do |t|
     t.string "leader_name"
     t.string "leader_IGN"

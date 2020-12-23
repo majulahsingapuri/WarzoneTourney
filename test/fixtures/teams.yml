@@ -9,9 +9,9 @@ one:
   member2_IGN: MyString
 
 two:
-  leader_name: MyString
-  leader_IGN: MyString
-  member1_name: MyString
-  member1_IGN: MyString
-  member2_name: MyString
-  member2_IGN: MyString
+  leader_name: MyString2
+  leader_IGN: MyString2
+  member1_name: MyString2
+  member1_IGN: MyString2
+  member2_name: MyString2
+  member2_IGN: MyString2
