@@ -7,6 +7,11 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all
+
+    require 'date'
+
+    endDate = DateTime.parse("2nd Jan 2021 14:00:00 GMT+0800")
+    @registrationOpen = DateTime.now < endDate
   end
 
   # GET /teams/1

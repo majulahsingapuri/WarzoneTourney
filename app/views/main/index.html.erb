@@ -10,9 +10,18 @@
 
 <br>
 
+<span style='text-align:center'>
+    <h4>Time left:</h4>
+    <h2 id="countdown"></h2>
+</span>
+
+<br>
+
 <div class='d-grid col-2 mx-auto'>
     <% if user_signed_in? %>
-        <%= link_to 'Register Team', new_team_path , class: 'btn btn-secondary' %>
+        <% if Team.count < 50 && current_user.team.nil? && @registrationOpen %>
+            <%= link_to 'Register Team', new_team_path , class: 'btn btn-secondary' %>
+        <% end %>
     <% else %>
         <%= link_to 'Sign in to Register Team', new_user_session_path , class: 'btn btn-secondary' %>
     <% end %>

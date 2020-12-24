@@ -48,8 +48,7 @@
 </table>
 
 <br>
-<%# TODO register only one team %>
-<% if user_signed_in? && Team.count < 50 && current_user.team.nil? %>
+<% if user_signed_in? && Team.count < 50 && current_user.team.nil? && @registrationOpen %>
   <div class='d-grid col-2 mx-auto'>
     <%= link_to 'Register', new_team_path, class: 'btn btn-secondary' %>
   </div>
