@@ -16,7 +16,7 @@
   </div>
 
   <div class="field mb-3">
-    <%= form.text_field :leader_IGN, class:'form-control', placeholder:'Leader IGN' %>
+    <%= form.text_field :leader_IGN, class:'form-control', placeholder:'Leader ActivisionID, eg. Gamer#123' %>
   </div>
 
   <div class="field mb-3">
@@ -24,7 +24,7 @@
   </div>
 
   <div class="field mb-3">
-    <%= form.text_field :member1_IGN, class:'form-control', placeholder:'Member 1 IGN' %>
+    <%= form.text_field :member1_IGN, class:'form-control', placeholder:'Member 1 ActivisionID, eg. Gamer#123' %>
   </div>
 
   <div class="field mb-3">
@@ -32,7 +32,7 @@
   </div>
 
   <div class="field mb-3">
-    <%= form.text_field :member2_IGN, class:'form-control', placeholder:'Member 2 IGN' %>
+    <%= form.text_field :member2_IGN, class:'form-control', placeholder:'Member 2 ActivisionID, eg. Gamer#123' %>
   </div>
 
   <%= form.number_field :user_id, id: :team_user_id, value: current_user.id, type: :hidden %>

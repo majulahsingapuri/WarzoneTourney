@@ -10,7 +10,7 @@
           <%= link_to 'Teams', teams_path , class: 'nav-link active' %>
         </li>
           <% if user_signed_in? %>
-            <% if Team.count < 50 %>
+            <% if Team.count < 50 && current_user.team.nil?%>
               <li class="nav-item"><%= link_to 'Register Team', new_team_path , class: 'nav-link active' %></li>
             <% end %>
             <li class="nav-item"><%= link_to 'Edit Profile', edit_user_registration_path , class: 'nav-link active' %></li>

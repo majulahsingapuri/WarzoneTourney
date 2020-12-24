@@ -1,6 +1,7 @@
 <h1>Teams</h1>
 
-<table class="table table-striped">
+<table class="table table-striped caption-top">
+  <caption><%= Team.count.to_s + ' Team(s)' %></caption>
   <thead>
     <tr>
       <th>Leader Name</th>
@@ -19,11 +20,11 @@
     <% @teams.each do |team| %>
       <tr>
         <td><%= team.leader_name %></td>
-        <td><%= team.leader_IGN %></td>
+        <td><%= link_to 'View Stats', 'https://cod.tracker.gg/warzone/profile/atvi/' + team.leader_IGN_link + '/overview', class:'btn btn-secondary' %></td>
         <td><%= team.member1_name %></td>
-        <td><%= team.member1_IGN %></td>
+        <td><%= link_to 'View Stats', 'https://cod.tracker.gg/warzone/profile/atvi/' + team.member1_IGN_link + '/overview', class:'btn btn-secondary' %></td>
         <td><%= team.member2_name %></td>
-        <td><%= team.member2_IGN %></td>
+        <td><%= link_to 'View Stats', 'https://cod.tracker.gg/warzone/profile/atvi/' + team.member2_IGN_link + '/overview', class:'btn btn-secondary' %></td>
         <% if user_signed_in? %>
           <td>
             <% if team.user_id == current_user.id %>
@@ -47,8 +48,8 @@
 </table>
 
 <br>
-
-<% if user_signed_in? && Team.count < 50 %>
+<%# TODO register only one team %>
+<% if user_signed_in? && Team.count < 50 && current_user.team.nil? %>
   <div class='d-grid col-2 mx-auto'>
     <%= link_to 'Register', new_team_path, class: 'btn btn-secondary' %>
   </div>
