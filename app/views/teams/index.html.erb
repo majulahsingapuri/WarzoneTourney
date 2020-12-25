@@ -4,6 +4,7 @@
   <caption><%= Team.count.to_s + ' Team(s)' %></caption>
   <thead>
     <tr>
+      <th>Team No.</th>
       <th>Leader Name</th>
       <th>Leader IGN</th>
       <th>Member1 Name</th>
@@ -17,8 +18,9 @@
   </thead>
 
   <tbody>
-    <% @teams.each do |team| %>
+    <% @teams.each_with_index do |team, index| %>
       <tr>
+        <td><%= index + 1 %></td>
         <td><%= team.leader_name %></td>
         <td><%= link_to 'View Stats', 'https://cod.tracker.gg/warzone/profile/atvi/' + team.leader_IGN_link + '/overview', class:'btn btn-secondary' %></td>
         <td><%= team.member1_name %></td>
